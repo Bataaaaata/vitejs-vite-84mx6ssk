@@ -1,0 +1,422 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+  color: #f9fafb;
+  background-color: #020617;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #020617;
+  color: #f9fafb;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* APP */
+
+.app {
+  min-height: 100vh;
+  background: #020617;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+
+.header {
+  border-bottom: 1px solid #1f2933;
+  background: #020617;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #22c55e;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.logo-area h1 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.logo-area p {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* FILTERS (topo) */
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border-radius: 999px;
+  border: 1px solid #1f2933;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 6px 12px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.filter-btn-active {
+  border-color: #22c55e;
+  background: #022c22;
+}
+
+.reload-btn {
+  border-radius: 999px;
+  border: 1px solid #22c55e;
+  background: #22c55e;
+  color: #000;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* WRAPPERS DE POPUP (CALENDÁRIO E CANAIS) */
+
+.date-picker-wrapper,
+.channel-picker-wrapper {
+  position: relative;
+}
+
+.date-picker-popover,
+.channel-picker-popover {
+  position: absolute;
+  right: 0;
+  margin-top: 8px;
+  background: #020617;
+  border: 1px solid #1f2933;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  z-index: 30;
+}
+
+/* Opções de canais */
+
+.channel-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #e5e7eb;
+  margin-bottom: 4px;
+}
+
+.channel-option input {
+  accent-color: #22c55e;
+}
+
+.channel-picker-all {
+  margin-top: 6px;
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid #1f2933;
+  background: #020617;
+  color: #9ca3af;
+  font-size: 11px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* MAIN */
+
+.main {
+  padding: 16px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* KPI GRID */
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1200px) {
+  .kpi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.kpi-card {
+  border-radius: 18px;
+  border: 1px solid #111827;
+  background: #020617;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kpi-label {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.kpi-value {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.kpi-variation {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.kpi-up {
+  color: #4ade80;
+}
+
+.kpi-down {
+  color: #f97373;
+}
+
+/* CHARTS LINHA */
+
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BLOCO ONDE FICAM AS ROSQUINHAS LADO A LADO */
+
+.chart-full {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .chart-full {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  border-radius: 18px;
+  border: 1px solid #111827;
+  background: #020617;
+  padding: 12px 14px;
+}
+
+.chart-card h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.chart-wrapper {
+  height: 220px;
+}
+
+/* altura um pouco maior para rosquinhas */
+
+.chart-wrapper-donut {
+  height: 260px;
+}
+
+/* TABLE */
+
+.table-card {
+  border-radius: 18px;
+  border: 1px solid #111827;
+  background: #020617;
+  padding: 12px 14px;
+}
+
+.table-card h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.table-wrapper {
+  max-height: 260px;
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px solid #111827;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+thead {
+  background: #020617;
+  position: sticky;
+  top: 0;
+}
+
+th,
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #111827;
+  text-align: left;
+}
+
+th {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+tbody tr:nth-child(even) {
+  background: #020617;
+}
+
+/* FOOTER */
+
+.footer {
+  border-top: 1px solid #111827;
+  text-align: center;
+  padding: 12px 16px 16px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* ===== ESTILOS DO CALENDÁRIO (react-date-range) ===== */
+
+.date-picker-popover .rdrCalendarWrapper {
+  background: #020617;
+  color: #e5e7eb;
+  border-radius: 12px;
+  border: 1px solid #1f2933;
+}
+
+.date-picker-popover .rdrMonthAndYearPickers select {
+  background: transparent;
+  color: #e5e7eb;
+}
+
+.date-picker-popover .rdrMonthAndYearPickers select option {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.date-picker-popover .rdrWeekDay {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+/* números dos dias */
+.date-picker-popover .rdrDayNumber span {
+  color: #e5e7eb;
+}
+
+/* dia de hoje com borda verde */
+.date-picker-popover .rdrDayToday .rdrDayNumber span {
+  border-color: #22c55e;
+}
+
+/* faixa selecionada (entre início e fim) */
+.date-picker-popover .rdrInRange,
+.date-picker-popover .rdrStartEdge,
+.date-picker-popover .rdrEndEdge {
+  background: #16a34a !important; /* verde mais forte */
+}
+
+/* texto dentro da faixa */
+.date-picker-popover .rdrInRange ~ .rdrDayNumber span,
+.date-picker-popover .rdrStartEdge ~ .rdrDayNumber span,
+.date-picker-popover .rdrEndEdge ~ .rdrDayNumber span {
+  color: #020617 !important; /* texto escuro em cima do verde */
+  font-weight: 600;
+}
+
+/* hover da seleção (preview) */
+.date-picker-popover .rdrDayInPreview,
+.date-picker-popover .rdrDayStartPreview,
+.date-picker-popover .rdrDayEndPreview {
+  border-color: #22c55e;
+}
+
+/* botão de navegação (setinhas do mês) */
+
+.date-picker-popover .rdrNextPrevButton {
+  background: #020617;
+  border: 1px solid #22c55e;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+/* seta desenhada com borda + rotação */
+.date-picker-popover .rdrNextPrevButton i {
+  border: solid #22c55e;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+/* seta ESQUERDA */
+.date-picker-popover .rdrNextPrevButton.rdrPprevButton i {
+  transform: rotate(135deg);
+}
+
+/* seta DIREITA */
+.date-picker-popover .rdrNextPrevButton.rdrNextButton i {
+  transform: rotate(-45deg);
+}
+
+/* hover: botão verde e seta escura */
+.date-picker-popover .rdrNextPrevButton:hover {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.date-picker-popover .rdrNextPrevButton:hover i {
+  border-color: #020617;
+}
